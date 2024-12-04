@@ -12,7 +12,7 @@ def parse_input(input_data_path: str) -> List:
 
 
 def check_value(v)->int:
-    return int((np.isin(np.diff(v),[1,2,3])).all()  | (np.isin(np.diff(v),[-1,-2,-3])).all())
+    return int((np.isin(np.diff(v),[1,2,3])).all() |(np.isin(np.diff(v),[-1,-2,-3])).all())
 
 def p1(l:List) -> int:
 
