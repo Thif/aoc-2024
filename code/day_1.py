@@ -1,5 +1,3 @@
-import numpy as np
-import sys
 from typing import Tuple, List
 
 
@@ -51,4 +49,4 @@ def p2(v1: List[int], v2: List[int]) -> int:
 
 def main(input_data):
     v1, v2 = parse_input(input_data)
-    print(p1(v1, v2), p2(v1, v2))
+    return (p1(v1, v2), p2(v1, v2))
