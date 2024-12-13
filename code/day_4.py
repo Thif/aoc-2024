@@ -1,23 +1,23 @@
 import numpy as np
-from typing import Tuple, List
+from typing import List
 import re
 
 
 def parse_input(input_data_path: str) -> str:
 
     m = np.loadtxt(input_data_path, dtype=str)
-    m = [list(l) for l in m]
+    m = [list(li) for li in m]
     return m
 
 
 def p1(m: str) -> int:
 
-    horizontal_mat = ["".join(l) for l in m]
+    horizontal_mat = ["".join(li) for li in m]
     count_h = [
         len(re.findall("XMAS", n)) + len(re.findall("SAMX", n)) for n in horizontal_mat
     ]
 
-    vertical_mat = ["".join(l) for l in np.rot90(m)]
+    vertical_mat = ["".join(li) for li in np.rot90(m)]
 
     count_v = [
         len(re.findall("XMAS", n)) + len(re.findall("SAMX", n)) for n in vertical_mat

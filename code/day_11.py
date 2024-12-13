@@ -1,7 +1,3 @@
-import numpy as np
-from functools import cache
-
-
 def parse_input(input_data: str):
 
     m = []
@@ -9,11 +5,11 @@ def parse_input(input_data: str):
     with open(input_data, "r") as file:
         for line in file:
             if "\n" in line:
-                l = [int(c) for c in line[:-1].split(" ")]
+                l_list = [int(c) for c in line[:-1].split(" ")]
             else:
-                l = [int(c) for c in line.split(" ")]
+                l_list = [int(c) for c in line.split(" ")]
 
-            m.append(l)
+            m.append(l_list)
 
     return m[0]
 

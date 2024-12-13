@@ -10,9 +10,9 @@ def parse_input(input_data_path: str) -> str:
     return m
 
 
-def p1(l: str) -> int:
+def p1(li: str) -> int:
 
-    matches = re.findall("mul\(\d+,\d+\)", l)
+    matches = re.findall(r"mul\(\d+,\d+\)", li)
 
     products = sum(
         [
@@ -27,12 +27,12 @@ def p1(l: str) -> int:
 def p2(input_list: List) -> int:
     products = 0
     parts = re.split(
-        "(do\(\)|don't\(\))", input_list
+        r"(do\(\)|don't\(\))", input_list
     )  # keeps do() or don't() in matches so that we can check preceding condition
 
     for i, chunck in enumerate(parts):
         if i == 0 or parts[i - 1] == "do()":
-            matches = re.findall("mul\(\d+,\d+\)", chunck)
+            matches = re.findall(r"mul\(\d+,\d+\)", chunck)
             products += sum(
                 [
                     math.prod([int(x) for x in vi.split("mul")[-1][1:-1].split(",")])

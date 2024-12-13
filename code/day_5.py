@@ -43,23 +43,23 @@ def fix_list(s, v):
 
 def p1(v1, v2) -> int:
     middle_sum = 0
-    for l in v2:
-        is_valid = check_valid(l, v1)
+    for li in v2:
+        is_valid = check_valid(li, v1)
         if is_valid:
-            middle_sum += l[int(len(l) / 2)]
+            middle_sum += li[int(len(li) / 2)]
 
     return middle_sum
 
 
 def p2(v1, v2) -> int:
     middle_sum = 0
-    for l in v2:
-        is_valid = check_valid(l, v1)
+    for li in v2:
+        is_valid = check_valid(li, v1)
         if not is_valid:
             is_corrected = False
             while not is_corrected:
-                is_corrected, l = fix_list(l, v1)
-            middle_sum += l[int(len(l) / 2)]
+                is_corrected, li = fix_list(li, v1)
+            middle_sum += li[int(len(li) / 2)]
 
     return middle_sum
 

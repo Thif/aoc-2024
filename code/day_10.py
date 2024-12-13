@@ -1,5 +1,4 @@
 import numpy as np
-import re
 
 
 def parse_input(input_data: str):
@@ -9,11 +8,11 @@ def parse_input(input_data: str):
     with open(input_data, "r") as file:
         for line in file:
             if "\n" in line:
-                l = [int(c) for c in line[:-1]]
+                l_list = [int(c) for c in line[:-1]]
             else:
-                l = [int(c) for c in line]
+                l_list = [int(c) for c in line]
 
-            m.append(l)
+            m.append(l_list)
 
     return np.array(m)
 
@@ -82,7 +81,7 @@ def p1(m) -> int:
 
 
 def p2(m) -> int:
-    goal_indexes = [(int(a[0]), int(a[1])) for a in np.array(np.where(m == 9)).T]
+
     trailhead_indexes = [(int(a[0]), int(a[1])) for a in np.array(np.where(m == 0)).T]
 
     connections = {}

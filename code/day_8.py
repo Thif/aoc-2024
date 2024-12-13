@@ -4,7 +4,7 @@ import numpy as np
 def parse_input(input_data_path: str) -> np.array:
 
     m = np.loadtxt(input_data_path, dtype=str)
-    m = [list(l) for l in m]
+    m = [list(l_list) for l_list in m]
     return np.array(m)
 
 

@@ -8,11 +8,11 @@ def parse_input(input_data: str):
     with open(input_data, "r") as file:
         for line in file:
             if "\n" in line:
-                l = [c for c in line[:-1]]
+                l_list = [c for c in line[:-1]]
             else:
-                l = [c for c in line]
+                l_list = [c for c in line]
 
-            m.append(l)
+            m.append(l_list)
 
     return np.array(m)
 
